@@ -59,7 +59,17 @@ namespace HYLab.Data.SqlServer
 							{
 								var property = typeof(T).GetProperty(column.ColumnName);
 								if (property != null && row[column] != DBNull.Value)
-									property.SetValue(obj, Convert.ChangeType(row[column], property.PropertyType));
+								{
+									var value = row[column];
+									if (property.PropertyType == typeof(DateTime?))
+									{
+										property.SetValue(obj, (DateTime?)value);
+									}
+									else
+									{
+										property.SetValue(obj, Convert.ChangeType(value, property.PropertyType));
+									}
+								}
 							}
 							results.Add(obj);
 						}

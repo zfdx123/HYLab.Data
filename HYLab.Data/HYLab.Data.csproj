@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>HYLab.Data</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Title>HYLab.Data</Title>
     <Authors>菜企鹅</Authors>
     <Description>基础数据库框架</Description>
