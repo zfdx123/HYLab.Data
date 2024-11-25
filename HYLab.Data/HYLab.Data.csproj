@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net481</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>HYLab.Data</PackageId>
+    <Version>1.0.2</Version>
+    <Title>HYLab.Data</Title>
+    <Authors>菜企鹅</Authors>
+    <Description>基础数据库框架</Description>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <Copyright>Copyright © 2024</Copyright>
+    <PackageProjectUrl>https://cybersafezone.top/</PackageProjectUrl>
+    <PackageReadmeFile>docs\readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/zfdx123/HYLab.Data</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <!-- Uncomment if you add an icon -->
+    <!-- <PackageIcon>icon.png</PackageIcon> -->
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net481'">
+    <PackageReference Include="MySql.Data" Version="9.1.0" ExcludeAssets="build;analyzers" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" ExcludeAssets="build;analyzers" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" ExcludeAssets="build;analyzers" />
+    <PackageReference Include="MySql.Data" Version="9.1.0" ExcludeAssets="build;analyzers" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" ExcludeAssets="build;analyzers" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\readme.md" Pack="true" PackagePath="docs\" />
+    <!-- Uncomment if you add an icon -->
+    <!-- <None Include="icon.png" Pack="true" PackagePath="" /> -->
+  </ItemGroup>
+</Project>
