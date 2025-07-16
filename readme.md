@@ -11,7 +11,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using HYLab.Data
+using HYLab.Data;
 using HYLab.Data.DBase;
 
 class Program
